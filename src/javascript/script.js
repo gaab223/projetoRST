@@ -57,4 +57,48 @@ $(document).ready(function() {
         duration: 1000,
         distance: '20%'
     })
+
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+    
+    // Carregar tema salvo no LocalStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+    }
+    
+    // Alternar tema ao clicar no botão
+    themeToggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-theme");
+    
+        // Salvar tema no LocalStorage
+        if (body.classList.contains("dark-theme")) {
+            localStorage.setItem("theme", "dark-theme");
+        } else {
+            localStorage.removeItem("theme");
+        }
+    });
+    
+    const loginForm = document.getElementById('loginForm');
+
+        // Adiciona o evento de submissão
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do formulário
+
+            // Aqui você pode validar o login, se necessário
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verifica se as credenciais são válidas (validação simples)
+            if (username === "admin" && password === "1234") {
+                alert('Login bem-sucedido!');
+                // Redireciona para o index.html
+                window.location.href = 'index.html';
+            } else {
+                alert('Usuário ou senha inválidos!');
+            }
+        });
+
 });
+
+

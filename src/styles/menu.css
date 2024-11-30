@@ -58,6 +58,16 @@
     gap: 20px;
 }
 
+.more-dishes-btn {
+    color: var(--color-primary-1);
+    text-decoration: none; /* Remove o sublinhado */
+    margin-top: 20px; /* Ajuste o valor conforme necessário */
+    display: block; /* Para centralizar o botão, caso esteja usando layout inline */
+    margin-left: auto; /* Centralizar horizontalmente */
+    margin-right: auto; /* Centralizar horizontalmente */
+}
+
+
 @media screen and (max-width: 1170px) {
     #dishes {
         flex-wrap: wrap;
