@@ -32,7 +32,7 @@
 
 
     --color-neutral-0: #fff;
-    --color-neutral-1: #1d1d1d;
+    --color-neutral-1: #000000;
     --color-neutral-2: #992a4d;
     --color-neutral-3: #990000;
 
@@ -135,4 +135,72 @@ section {
 
 #theme-toggle i {
     transition: transform 0.3s ease;
+}
+
+#cadastro {
+    background-image: url('../images/istockphoto-1192903472-612x612.jpg'); /* Caminho da sua imagem */
+    background-size: cover; /* Faz a imagem preencher a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    padding: 60px 20px; /* Espaçamento interno */
+    color: white; /* Garante que o texto fique visível */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto */
+}
+
+
+#cadastro h2 {
+    font-size: 32px;
+    color: var(--color-red-vibrant-5); /* Cor do título */
+    margin-bottom: 16px;
+}
+
+#cadastro p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+#form-cadastro {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-cadastro {
+    background-color: var(--color-red-vibrant-5);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cadastro:hover {
+    background-color: var(--color-red-vibrant-6);
 }

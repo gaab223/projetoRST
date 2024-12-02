@@ -14,9 +14,20 @@ header {
 }
 
 #nav_logo {
-    font-size: 24px;
-    color: var(--color-red-vibrant-5);
+    font-family: 'Cormorant Garamond', serif; /* Ou 'Prata' */
+    font-size: 36px; /* Aumente o tamanho para maior visibilidade */
+    color: var(--color-red-vibrant-5); /* Cor do texto */
+    font-weight: 600; /* Deixa a fonte mais marcante */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
 }
+
+#nav_logo i {
+    font-size: 28px; /* Ajuste o tamanho do ícone */
+}
+
+
 
 #nav_list {
     display: flex;

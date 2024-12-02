@@ -1,38 +1,59 @@
+/* Seção home */
 #home {
-    display: flex;
-    min-height: calc(100vh - 91px);
     position: relative;
+    background-image: url('../images/La\ travola.png');
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    height: 100vh; /* Define a altura como 100% da altura da janela */
+    overflow: hidden; /* Garante que elementos fora do contêiner não sejam visíveis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza os elementos verticalmente */
 }
 
+header {
+    z-index: 10; /* Garante que o header esteja acima do #home */
+}
+
+/* Centraliza o CTA */
 #cta {
-    width: 35%;
+    width: 60%;
+    text-align: center;
+    color: white;
     display: flex;
     flex-direction: column;
-    gap: 28px;
-    margin-top: 5%;
+    gap: 20px;
+    z-index: 1; /* Garante que o CTA fique acima do overlay */
 }
 
-#cta .title {
-    font-size: 4rem;
-    color: var(--color-neutral-1);;
+/* Overlay para escurecer o fundo */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece o fundo */
+    z-index: 0; /* Fica atrás do conteúdo */
 }
 
-#cta .title span {
-    color: var(--color-primary-6);
-}
-
-#cta .description {
-    font-size: 1.2rem;
-}
-
-#cta_buttons {
+/* Botões e mídias sociais */
+#cta_buttons,
+.social-media-buttons {
+    margin-top: 20px; /* Distância do CTA */
     display: flex;
-    gap: 24px;
+    gap: 16px;
+    justify-content: center;
 }
 
+/* Botões */
 #cta_buttons a {
     text-decoration: none;
-    color: var(--color-neutral-1);;
+    color: var(--color-neutral-1);
+    font-weight: 600;
 }
 
 #phone_button {
@@ -46,56 +67,29 @@
     border-radius: 12px;
 }
 
-#phone_button button {
-    box-shadow: none;
+/* Ícones de mídia social */
+.social-media-buttons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
 }
 
-#banner {
-    display: flex;
-    align-items: start;
-    justify-content: end;
-    width: 70%;
-    z-index: 2;
+.social-media-buttons a:hover {
+    color: var(--color-primary-6);
 }
 
-#banner img {
-    height: 100%;
-    width: fit-content;
-}
-
-.shape {
-    background-color: var(--color-primary-2);
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    border-radius: 40% 30% 0% 20%;
-    top: 0;
-    right: 0;
-    z-index: 1;
-}
-
-
-@media screen and (max-width: 1170px) {
-    #home {
-        min-height: 100%;
-        padding-top: 0px;
-    }
-
-    #banner,
-    #banner img,
-    #home .shape {
-        display: none;
-    }
-
+/* Responsividade */
+@media screen and (max-width: 768px) {
     #cta {
-        width: 100%;
-        text-align: center;
-        align-items: center;
+        width: 80%;
     }
-}
 
-@media screen and (max-width: 450px) {
-    #phone_button button {
-        display: none;
+    #cta .title {
+        font-size: 2.5rem;
+    }
+
+    #cta_buttons,
+    .social-media-buttons {
+        flex-wrap: wrap;
     }
 }
